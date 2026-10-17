@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — Zifeng Dai</title>
-  <meta name="description" content="About Zifeng Dai, a graduate student at Beijing Institute of Technology working on computer vision, UAV detection, and security.">
+  <meta name="description" content="About Zifeng Dai, a graduate student at Beijing Institute of Technology working on UAV networks, federated learning, computer vision, and security.">
   <meta name="author" content="Zifeng Dai">
   <meta property="og:type" content="website">
   <meta property="og:title" content="About — Zifeng Dai">
-  <meta property="og:description" content="Graduate student at BIT. Computer vision, UAV detection, and security.">
+  <meta property="og:description" content="Graduate student at BIT. UAV networks, federated learning, and computer vision.">
   <meta property="og:image" content="https://vectordai2000.github.io/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Zifeng Dai — computer vision and security">
+  <meta property="og:image:alt" content="Zifeng Dai — research notes">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261017">
   <script>
     (function () {
       try {
@@ -75,15 +75,22 @@
         <p class="eyebrow">About · The short version</p>
         <h1>The person behind <em>the boxes.</em></h1>
         <p class="page-lede">
-          I’m Zifeng — a graduate student, a detector-builder, and a person who thinks best with a notebook open.
+          I’m Zifeng — a graduate student working on UAV networks, federated learning, and computer vision. I like systems that have to work outside the lab, and notes that survive the next deadline.
         </p>
+        <div class="about-keywords">
+          <span class="tag">UAV networks</span>
+          <span class="tag">Multi-agent RL</span>
+          <span class="tag">Federated learning</span>
+          <span class="tag">Privacy</span>
+          <span class="tag">Computer vision</span>
+        </div>
       </div>
     </section>
 
     <section class="about-grid wrap">
       <div class="about-copy">
         <p>
-          I study computer vision and security at Beijing Institute of Technology, in the School of Cyberspace Science and Technology. My work asks how machines can find <em>small things</em> in large, messy scenes — and what it means to deploy that ability responsibly.
+          I study networked systems and security at Beijing Institute of Technology, in the School of Cyberspace Science and Technology. My work moves between <em>small-target detection</em> for UAVs and the <em>learning systems</em> that coordinate UAV-assisted edge computing.
         </p>
         <p>
           I started graduate school in 2023. Like a lot of first-year students, I began with Andrew Ng’s machine learning course and a notebook full of definitions. That notebook became <a href="https://hkhldzf.github.io/">VectorBlog</a>, a place to record what I was learning about regression, clustering, and the privacy properties of blockchains. This site is the next version of that habit: slower, cleaner, and a little more honest about what I do and don’t know.
@@ -92,11 +99,15 @@
           The name <strong>Vector</strong> comes from that first blog. I still like it. A vector has direction and magnitude; a good research question should have both.
         </p>
         <p>
-          These days my attention is split between detection models and the systems around them. I care about benchmarks, but I care more about what happens when a model leaves the dataset: different sensors, bad weather, edge hardware, and the social questions that arrive when a camera is pointed at a public sky.
+          These days I work on three questions: how to detect objects that occupy only a handful of pixels; how to coordinate a swarm when every agent is learning and the action space is hybrid; and how to learn across heterogeneous clients without exposing their data.
         </p>
         <p>
           This site is where I keep the working notes — the failed experiments, the diagrams that finally made sense, and the papers I wish someone had explained to me earlier.
         </p>
+        <div class="about-actions">
+          <a class="btn btn--solid" href="contact.html">Say hello <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="blog.html">Read the notes <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
 
       <aside class="portrait-card">
@@ -119,22 +130,89 @@
           <p>Zifeng Dai<br>Graduate student, BIT</p>
           <span class="mono">Beijing</span>
         </div>
+        <dl class="portrait-facts">
+          <div>
+            <dt>Focus</dt>
+            <dd>UAV networks, federated learning, computer vision</dd>
+          </div>
+          <div>
+            <dt>School</dt>
+            <dd>Cyberspace Science and Technology, BIT</dd>
+          </div>
+          <div>
+            <dt>Since</dt>
+            <dd>Graduate study, 2023</dd>
+          </div>
+        </dl>
       </aside>
+    </section>
+
+    <section class="section about-research">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-label"><b>01</b> Research</p>
+            <h2 class="section-title">Three questions I keep returning to.</h2>
+          </div>
+          <a class="section-link" href="research.html">Research page <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="about-research-grid">
+          <article class="about-thread">
+            <div class="about-thread-top">
+              <span>MVA 2026</span>
+              <span class="num">01</span>
+            </div>
+            <h3>Can a detector see what is almost not there?</h3>
+            <p>TARG-YOLO: small-target detection for UAVs, with RepMS, DDetHead, and TARG-IoU. 89.93% mAP on DUT Anti-UAV.</p>
+            <div class="about-thread-links">
+              <a href="research.html">Research page ↗</a>
+              <a href="https://doi.org/10.1007/s00138-026-01792-2">Paper DOI ↗</a>
+            </div>
+          </article>
+
+          <article class="about-thread">
+            <div class="about-thread-top">
+              <span>IEEE TVT 2026</span>
+              <span class="num">02</span>
+            </div>
+            <h3>How do you coordinate a swarm when everyone is learning?</h3>
+            <p>MAPA-MARL: meta-policy multi-agent RL for hybrid action spaces, fairness constraints, and non-stationary UAV networks.</p>
+            <div class="about-thread-links">
+              <a href="posts/mapa-marl-uav-networks.html">Paper note ↗</a>
+              <a href="https://doi.org/10.1109/TVT.2026.3700721">Paper DOI ↗</a>
+            </div>
+          </article>
+
+          <article class="about-thread">
+            <div class="about-thread-top">
+              <span>IEEE IoTJ 2026</span>
+              <span class="num">03</span>
+            </div>
+            <h3>Can privacy and useful learning coexist?</h3>
+            <p>PQ-FRL: quality-aware federated reinforcement learning for UAV-assisted edge computing under DP noise and Non-IID data.</p>
+            <div class="about-thread-links">
+              <a href="posts/pq-frl-uav-edge.html">Paper note ↗</a>
+              <a href="https://doi.org/10.1109/JIOT.2026.3695149">Paper DOI ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section class="now">
       <div class="wrap">
-        <p class="section-label"><b>01</b> Now</p>
+        <p class="section-label"><b>02</b> Now</p>
         <div class="now-grid">
           <div class="now-card">
             <span class="mono">Research</span>
-            <h3>Small targets, real skies</h3>
-            <p>Working on small-object detection for UAVs and maintaining the TARG-YOLO codebase.</p>
+            <h3>UAV networks, in the loop</h3>
+            <p>Multi-agent coordination and privacy-preserving federated learning for UAV-assisted edge computing.</p>
           </div>
           <div class="now-card">
             <span class="mono">Writing</span>
             <h3>Notes, not announcements</h3>
-            <p>Turning lab notebooks into short essays about vision, privacy, and research practice.</p>
+            <p>Two paper notes on MAPA-MARL and PQ-FRL — with the caveats left in.</p>
           </div>
           <div class="now-card">
             <span class="mono">Building</span>
@@ -153,7 +231,7 @@
       <div class="timeline">
         <div class="timeline-item">
           <time datetime="2026">2026</time>
-          <p><strong>TARG-YOLO</strong> published in <em>Machine Vision and Applications</em>. A paper, a code release, and a lot of lessons about evaluation.</p>
+          <p><strong>Three papers in one year:</strong> TARG-YOLO in <em>Machine Vision and Applications</em>, MAPA-MARL in <em>IEEE Transactions on Vehicular Technology</em>, and PQ-FRL in <em>IEEE Internet of Things Journal</em>.</p>
         </div>
         <div class="timeline-item">
           <time datetime="2025">2025</time>
@@ -176,8 +254,12 @@
 
     <section class="elsewhere">
       <div class="wrap">
-        <p class="section-label"><b>02</b> Elsewhere</p>
+        <p class="section-label"><b>03</b> Elsewhere</p>
         <div class="link-list">
+          <div class="link-row">
+            <a href="contact.html">Leave a message</a>
+            <span>Contact form</span>
+          </div>
           <div class="link-row">
             <a href="https://github.com/vectordai2000">GitHub — @vectordai2000</a>
             <span>New work</span>
@@ -187,12 +269,20 @@
             <span>Research code</span>
           </div>
           <div class="link-row">
-            <a href="https://github.com/hkhldzf/TARG-YOLO">TARG-YOLO source</a>
-            <span>Code</span>
+            <a href="https://doi.org/10.1109/TVT.2026.3700721">MAPA-MARL paper</a>
+            <span>IEEE TVT 2026</span>
+          </div>
+          <div class="link-row">
+            <a href="https://doi.org/10.1109/JIOT.2026.3695149">PQ-FRL paper</a>
+            <span>IEEE IoTJ 2026</span>
           </div>
           <div class="link-row">
             <a href="https://doi.org/10.1007/s00138-026-01792-2">TARG-YOLO paper</a>
-            <span>DOI</span>
+            <span>MVA 2026</span>
+          </div>
+          <div class="link-row">
+            <a href="https://github.com/hkhldzf/TARG-YOLO">TARG-YOLO source</a>
+            <span>Code</span>
           </div>
           <div class="link-row">
             <a href="https://hkhldzf.github.io/">VectorBlog archive</a>
@@ -219,7 +309,7 @@
         <div>
           <p class="eyebrow">Contact</p>
           <h2>Let’s talk about <em>small things.</em></h2>
-          <p>If you work on small-object detection, UAV vision, or privacy-preserving systems — or just want to compare notes — the best place to reach me is GitHub.</p>
+          <p>If you work on UAV networks, federated learning, or computer vision — or just want to compare notes — send a message or find me on GitHub.</p>
         </div>
         <a class="btn btn--solid" href="contact.html">Leave a message <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
@@ -235,7 +325,7 @@
             </span>
             <span class="brand-name">Zifeng Dai</span>
           </a>
-          <p>Notes on computer vision, security, and the slow craft of research. Written in Beijing.</p>
+          <p>Notes on networked systems, learning, and the slow craft of research. Written in Beijing.</p>
         </div>
 
         <div class="footer-col">
@@ -264,6 +354,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20261017"></script>
 </body>
 </html>
