@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes from building TARG-YOLO — Zifeng Dai</title>
+  <meta name="description" content="What starting from a strong baseline taught me about evaluation, branches, and repository hygiene.">
+  <meta name="author" content="Zifeng Dai">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Notes from building TARG-YOLO">
+  <meta property="og:description" content="What starting from a strong baseline taught me about evaluation, branches, and repository hygiene.">
+  <meta property="og:image" content="https://vectordai2000.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zifeng Dai — computer vision and security">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Zifeng Dai — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <span class="brand-name">Zifeng Dai</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../blog.html" aria-current="page">Writing</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../about.html">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M3 7h18M3 12h18M3 17h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="article-head">
+        <div class="wrap">
+          <a class="back-link" href="../blog.html">← All writing</a>
+          <h1>Notes from building TARG-YOLO</h1>
+          <p class="article-dek">What starting from a strong baseline taught me about evaluation, branches, and repository hygiene.</p>
+          <div class="article-meta">
+            <time datetime="2026-03-20">20 March 2026</time>
+            <span class="sep" aria-hidden="true"></span>
+            <span>6 min read</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="tag">Research</span>
+            <span class="tag">Engineering</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <div class="article-body">
+          <p>
+            The first version of TARG-YOLO was not a clever idea. It was a working copy of YOLOv9 that I could run from end to end. That sounds unambitious, but it was the most important step in the project. Until the baseline trains, evaluates, and reproduces a number, every architectural change is a guess.
+          </p>
+
+          <h2>Start with a baseline you can trust</h2>
+          <p>
+            Reproducing a baseline is not glamorous. It is also the only way to know whether a change helped. We spent time on the data pipeline, augmentation, and evaluation protocol before touching the architecture. The goal was not to match the published number exactly; it was to have a stable reference point that we understood.
+          </p>
+          <p>
+            Three training entry points remain in the repository: <code>train.py</code>, <code>train_dual.py</code>, and <code>train_triple.py</code>. They reflect the multi-branch training style of the YOLOv9 codebase. Keeping them separate made it possible to compare configurations without rewriting the training loop. It also made the repository harder to read. A year later, I would add one page that says, plainly, which script to use and why.
+          </p>
+
+          <h2>Put new ideas in their own files</h2>
+          <p>
+            <code>RepMS.py</code> and <code>DDetHead.py</code> are deliberately small and self-contained. The rest of the repository is the baseline. This is not only aesthetic. When an experiment fails, separate files make it easier to remove the change and return to a known state.
+          </p>
+          <p>
+            The loss is the exception. TARG-IoU touches the training code and interacts with the data pipeline, so it cannot be isolated as cleanly as a module. That is a useful reminder: some ideas are architectural, and some are woven into the process. The second kind is harder to evaluate and harder to remove.
+          </p>
+
+          <h2>Evaluate like you expect to be wrong</h2>
+          <p>
+            Small-target detection is full of ways to accidentally flatter a model. Crop the evaluation images and the target becomes larger. Tune the confidence threshold on the test set and the mAP becomes a souvenir. Compare against a baseline trained with different augmentation and the improvement may be an artifact.
+          </p>
+          <p>
+            We tried to keep the protocol fixed: same data, same splits, same augmentation budget, same evaluation script. The comparisons in the paper are against YOLOv9 and YOLOv12 under the reported settings. Even then, a single number is a summary, not a proof.
+          </p>
+
+          <h2>The unglamorous lessons</h2>
+          <p>
+            <strong>Checkpoints do not belong in Git.</strong> The repository carries a 103 MB <code>yolov9-c.pt</code> and a <code>runs/</code> directory. It works, but it makes cloning slow and buries the code. If I rebuilt the repository, weights would be release assets and runs would be ignored.
+          </p>
+          <p>
+            <strong>Log the command, not just the result.</strong> A run is a configuration plus a seed plus a machine. If you cannot reconstruct it, you cannot debug it.
+          </p>
+          <p>
+            <strong>Keep a failing example.</strong> One image where the model misses a target is worth more than ten aggregate plots. It gives you a place to start asking why.
+          </p>
+          <p>
+            <strong>Write the README first.</strong> A reader who cannot run your code in ten minutes will not stay for the architecture diagram. Write it before the paper, not after.
+          </p>
+          <p>
+            <strong>Separate “works” from “better.”</strong> A module can improve one metric and hurt another. Decide what you are optimizing before you celebrate.
+          </p>
+
+          <blockquote>
+            <p>The baseline gives you a head start. Discipline is what turns the head start into a result you can defend.</p>
+          </blockquote>
+
+          <h2>What I would do differently</h2>
+          <p>
+            Build a small, boring evaluation harness first. Add one change at a time. Keep a table of every run, the exact commit, and the command. Write the explanation for a reader who has ten minutes, not a reviewer who has ten pages.
+          </p>
+          <p>
+            I would also separate the research repository from the paper artifact. The research repository can be messy and fast; the artifact should be minimal, documented, and tested. Trying to make one repository do both jobs is how you end up with a 100 MB checkpoint next to the source code.
+          </p>
+
+          <h2>The code is public</h2>
+          <p>
+            If you reproduce the work, I would genuinely like to hear what breaks. Negative results are welcome. So are questions that start with “why did you…?” — those are usually the ones worth answering.
+          </p>
+
+          <div class="article-note">
+            <strong>Repository.</strong> The implementation is at <a href="https://github.com/hkhldzf/TARG-YOLO">github.com/hkhldzf/TARG-YOLO</a>. The paper is at <a href="https://doi.org/10.1007/s00138-026-01792-2">doi.org/10.1007/s00138-026-01792-2</a>.
+          </div>
+        </div>
+
+        <footer class="article-footer">
+          <div class="author-strip">
+            <span class="avatar avatar--mono" aria-hidden="true">ZD</span>
+            <p><strong>Zifeng Dai</strong>Graduate student at BIT. I write about computer vision, security, and the research process.</p>
+          </div>
+          <nav class="post-nav" aria-label="More posts">
+            <a href="why-small-targets-are-hard.html">
+              <span>Newer note</span>
+              <strong>Why small targets are hard</strong>
+            </a>
+            <a class="next" href="privacy-on-a-public-ledger.html">
+              <span>Older note</span>
+              <strong>Privacy on a public ledger</strong>
+            </a>
+          </nav>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cta">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk about <em>small things.</em></h2>
+          <p>If you work on small-object detection, UAV vision, or privacy-preserving systems — or just want to compare notes — the best place to reach me is GitHub.</p>
+        </div>
+        <a class="btn btn--solid" href="https://github.com/vectordai2000">Say hello <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Zifeng Dai — home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="brand-name">Zifeng Dai</span>
+          </a>
+          <p>Notes on computer vision, security, and the slow craft of research. Written in Beijing.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html">Writing</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../about.html">About</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Elsewhere</h3>
+          <a href="https://github.com/vectordai2000">GitHub</a>
+          <a href="https://github.com/hkhldzf">Previous GitHub</a>
+          <a href="https://doi.org/10.1007/s00138-026-01792-2">Paper DOI</a>
+          <a href="https://hkhldzf.github.io/">Old blog</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Zifeng Dai</span>
+        <span class="motto" lang="zh-Hans">天道酬勤 · diligence has its reward</span>
+        <span>Built by hand · HTML / CSS / JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

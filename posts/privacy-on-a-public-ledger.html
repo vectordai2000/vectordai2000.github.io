@@ -1,0 +1,236 @@
+﻿<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy on a public ledger — Zifeng Dai</title>
+  <meta name="description" content="Identity, transactions, and why “just use a mixer” is not a privacy model.">
+  <meta name="author" content="Zifeng Dai">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Privacy on a public ledger">
+  <meta property="og:description" content="Identity, transactions, and why “just use a mixer” is not a privacy model.">
+  <meta property="og:image" content="https://vectordai2000.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zifeng Dai — computer vision and security">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Zifeng Dai — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <span class="brand-name">Zifeng Dai</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../blog.html" aria-current="page">Writing</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../about.html">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M3 7h18M3 12h18M3 17h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="article-head">
+        <div class="wrap">
+          <a class="back-link" href="../blog.html">← All writing</a>
+          <h1>Privacy on a public ledger</h1>
+          <p class="article-dek">Identity, transactions, and why “just use a mixer” is not a privacy model.</p>
+          <div class="article-meta">
+            <time datetime="2024-05-09">9 May 2024</time>
+            <span class="sep" aria-hidden="true"></span>
+            <span>6 min read</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="tag">Privacy</span>
+            <span class="tag">Notes</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <div class="article-body">
+          <p>
+            A blockchain is a public record by design. Every full node can read every transaction; the ledger is copied, archived, and analyzed. That is the point: shared state without a central keeper. It is also a privacy problem that cannot be fixed with a settings toggle.
+          </p>
+
+          <h2>Two different privacies</h2>
+          <p>
+            <strong>Identity privacy</strong> is the link between a user and an address. <strong>Transaction privacy</strong> is the link between transactions, amounts, and the parties involved. They are related, but they are not the same.
+          </p>
+          <p>
+            Hiding your name does nothing if your transactions form a unique fingerprint. Hiding each transaction does nothing if the same address pays your rent every month. A system that protects one and leaks the other is not private; it is private-looking.
+          </p>
+
+          <h2>Where the leak happens</h2>
+          <p>
+            Most discussions of blockchain privacy start at the cryptography. Most failures start somewhere else.
+          </p>
+          <ul>
+            <li><strong>Network layer.</strong> IP addresses, timing, and peer connections can link a transaction to the machine that broadcast it.</li>
+            <li><strong>Transaction layer.</strong> Graph analysis, amount correlation, change addresses, and address reuse can reconstruct relationships even when names are absent.</li>
+            <li><strong>Application layer.</strong> Exchanges, wallets, front-ends, and KYC records connect the public ledger to real identities.</li>
+          </ul>
+          <p>
+            The pattern is familiar from security engineering: the cryptographic core may be sound while the system around it leaks. Privacy is a property of the whole pipeline, not a feature of one primitive.
+          </p>
+
+          <h2>The toolbox</h2>
+          <p>
+            <strong>Mixers</strong> break the direct link between inputs and outputs by pooling funds. They work only when the anonymity set is large and honest. A mixer with three users is a log with extra steps.
+          </p>
+          <p>
+            <strong>Ring signatures</strong> let a signer hide among a group of possible signers. Monero is the canonical example. The trade-off is size and verification cost: the larger the ring, the stronger the ambiguity, and the more work the network does.
+          </p>
+          <p>
+            <strong>Zero-knowledge proofs</strong> let a party prove a statement without revealing the witness. Zcash uses zk-SNARKs for shielded transactions; zk-STARKs and Bulletproofs offer different trade-offs in setup assumptions, proof size, and verification time. The mathematics is powerful, but it does not remove the need to think about metadata, wallets, and endpoints.
+          </p>
+          <p>
+            <strong>Secure multi-party computation</strong> and <strong>fully homomorphic encryption</strong> allow computation over data that stays hidden. They are the natural tools when the goal is not just private payments but private analysis: two hospitals computing a shared statistic without exchanging patient records, for example. The cost is usually performance, sometimes by orders of magnitude.
+          </p>
+          <p>
+            <strong>Trusted execution environments</strong> offer another path, with a different assumption: you are trusting hardware and the vendor that built it. That may be acceptable in some threat models and unacceptable in others. The point is to make the assumption explicit rather than treating “TEE” as a synonym for “secure.”
+          </p>
+
+          <blockquote>
+            <p>Privacy is not a primitive you add at the end. It is a property of the system you build around it.</p>
+          </blockquote>
+
+          <h2>Privacy has to be the default</h2>
+          <p>
+            The old note I wrote in 2024 made a point I still believe: privacy must be a property of the protocol, not an optional feature. If users have to opt in, most will not. If the private path is slower or more expensive, using it becomes a signal in itself. Privacy that is visible is privacy that is fragile.
+          </p>
+          <p>
+            Three design constraints keep coming back. Privacy must be <strong>complete</strong> — default, end to end, not a patch on one layer. It must be <strong>cheap enough to use</strong> — a private transaction that costs ten times more will remain a niche. And it must be <strong>programmable</strong> — real applications need more than transfers: account recovery, multi-signature schemes, spending limits, and contracts.
+          </p>
+
+          <h2>Privacy is not the opposite of accountability</h2>
+          <p>
+            Regulation needs a way to trace illegal activity. Privacy systems need a way to avoid becoming a haven for it. The interesting designs are neither “no oversight” nor “full surveillance.” They are forms of selective disclosure: viewing keys, threshold decryption, auditable privacy, and proofs that reveal only what a specific authority is entitled to see.
+          </p>
+          <p>
+            This is the part I find most interesting as a security researcher. The goal is not to make data invisible. It is to separate ownership from use: to prove and compute without handing over the underlying data. A hospital should be able to contribute to a study without shipping its records; a user should be able to pay without publishing a life history.
+          </p>
+
+          <h2>The ledger is public</h2>
+          <p>
+            The people on it do not have to be. That sentence sounds simple, but it requires work at every layer: the network, the transaction graph, the application, and the governance around them. Cryptography is necessary. It is not sufficient.
+          </p>
+
+          <div class="article-note">
+            <strong>Note.</strong> First published on VectorBlog in May 2024. Lightly edited for this site. The original post was a reading note, not a survey; I have tried to keep the claims general and the trade-offs explicit.
+          </div>
+        </div>
+
+        <footer class="article-footer">
+          <div class="author-strip">
+            <span class="avatar avatar--mono" aria-hidden="true">ZD</span>
+            <p><strong>Zifeng Dai</strong>Graduate student at BIT. I write about computer vision, security, and the research process.</p>
+          </div>
+          <nav class="post-nav" aria-label="More posts">
+            <a href="building-targ-yolo.html">
+              <span>Newer note</span>
+              <strong>Notes from building TARG-YOLO</strong>
+            </a>
+            <a class="next" href="first-mile-of-machine-learning.html">
+              <span>Older note</span>
+              <strong>The first mile of machine learning</strong>
+            </a>
+          </nav>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cta">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk about <em>small things.</em></h2>
+          <p>If you work on small-object detection, UAV vision, or privacy-preserving systems — or just want to compare notes — the best place to reach me is GitHub.</p>
+        </div>
+        <a class="btn btn--solid" href="https://github.com/vectordai2000">Say hello <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Zifeng Dai — home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="brand-name">Zifeng Dai</span>
+          </a>
+          <p>Notes on computer vision, security, and the slow craft of research. Written in Beijing.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html">Writing</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../about.html">About</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Elsewhere</h3>
+          <a href="https://github.com/vectordai2000">GitHub</a>
+          <a href="https://github.com/hkhldzf">Previous GitHub</a>
+          <a href="https://doi.org/10.1007/s00138-026-01792-2">Paper DOI</a>
+          <a href="https://hkhldzf.github.io/">Old blog</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Zifeng Dai</span>
+        <span class="motto" lang="zh-Hans">天道酬勤 · diligence has its reward</span>
+        <span>Built by hand · HTML / CSS / JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

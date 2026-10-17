@@ -1,0 +1,122 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Zifeng Dai</title>
+  <meta name="robots" content="noindex">
+  <!-- If you deploy to a project page instead of the root domain, change "/" to "/your-repo/". -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #f4f0e6;
+      --ink: #171510;
+      --muted: #756e5f;
+      --line: #b7ab94;
+      --accent: #b83a1c;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12110e;
+        --ink: #f0ecdf;
+        --muted: #948c7b;
+        --line: #4a4336;
+        --accent: #ff7048;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      text-align: center;
+    }
+    main { max-width: 560px; }
+    .mark {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      color: var(--accent);
+    }
+    .code {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: clamp(6rem, 22vw, 10rem);
+      line-height: 0.8;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--line);
+      margin: 0;
+    }
+    h1 {
+      margin: 22px 0 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    p {
+      margin: 16px auto 0;
+      max-width: 42ch;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    a {
+      display: inline-block;
+      padding: 11px 16px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+    a:hover { border-color: var(--ink); }
+    a.primary {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--bg);
+    }
+    .mono {
+      margin-top: 40px;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/>
+        <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+    <p class="code" aria-hidden="true">404</p>
+    <h1>This page is out of frame.</h1>
+    <p>The link may be old, or the page may have moved. Nothing is lost — the notes are still where you left them.</p>
+    <nav aria-label="Helpful links">
+      <a class="primary" href="/">Home</a>
+      <a href="/blog.html">Writing</a>
+      <a href="/research.html">Research</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
+    <p class="mono">ZIFENG DAI · BEIJING</p>
+  </main>
+</body>
+</html>
