@@ -1,23 +1,23 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — Zifeng Dai</title>
-  <meta name="description" content="About Zifeng Dai, a graduate student at Beijing Institute of Technology working on UAV networks, federated learning, computer vision, and security.">
+  <meta name="description" content="About Zifeng Dai, a graduate student at Beijing Institute of Technology working on UAV networks, federated learning, and security.">
   <meta name="author" content="Zifeng Dai">
   <meta property="og:type" content="website">
   <meta property="og:title" content="About — Zifeng Dai">
-  <meta property="og:description" content="Graduate student at BIT. UAV networks, federated learning, and computer vision.">
-  <meta property="og:image" content="https://vectordai2000.github.io/assets/og.png">
+  <meta property="og:description" content="Graduate student at BIT. UAV networks, federated learning, and security.">
+  <meta property="og:image" content="https://vectordai2000.github.io/assets/og-uav.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Zifeng Dai — research notes">
+  <meta property="og:image:alt" content="Zifeng Dai — UAV networks and federated learning">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261017">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261018">
   <script>
     (function () {
       try {
@@ -73,16 +73,16 @@
     <section class="page-head" data-index="04">
       <div class="wrap">
         <p class="eyebrow">About · The short version</p>
-        <h1>The person behind <em>the boxes.</em></h1>
+        <h1>The person behind <em>the networks.</em></h1>
         <p class="page-lede">
-          I’m Zifeng — a graduate student working on UAV networks, federated learning, and computer vision. I like systems that have to work outside the lab, and notes that survive the next deadline.
+          I’m Zifeng — a graduate student working on UAV networks, federated learning, and the systems that connect them. I like work that has to survive outside the lab, and notes that survive the next deadline.
         </p>
         <div class="about-keywords">
           <span class="tag">UAV networks</span>
           <span class="tag">Multi-agent RL</span>
           <span class="tag">Federated learning</span>
           <span class="tag">Privacy</span>
-          <span class="tag">Computer vision</span>
+          <span class="tag">Edge computing</span>
         </div>
       </div>
     </section>
@@ -90,7 +90,7 @@
     <section class="about-grid wrap">
       <div class="about-copy">
         <p>
-          I study networked systems and security at Beijing Institute of Technology, in the School of Cyberspace Science and Technology. My work moves between <em>small-target detection</em> for UAVs and the <em>learning systems</em> that coordinate UAV-assisted edge computing.
+          I study networked systems and security at Beijing Institute of Technology, in the School of Cyberspace Science and Technology. My work asks how UAV-assisted edge systems <em>coordinate</em>, <em>learn</em>, and protect the data they depend on.
         </p>
         <p>
           I started graduate school in 2023. Like a lot of first-year students, I began with Andrew Ng’s machine learning course and a notebook full of definitions. That notebook became <a href="https://hkhldzf.github.io/">VectorBlog</a>, a place to record what I was learning about regression, clustering, and the privacy properties of blockchains. This site is the next version of that habit: slower, cleaner, and a little more honest about what I do and don’t know.
@@ -99,7 +99,7 @@
           The name <strong>Vector</strong> comes from that first blog. I still like it. A vector has direction and magnitude; a good research question should have both.
         </p>
         <p>
-          These days I work on three questions: how to detect objects that occupy only a handful of pixels; how to coordinate a swarm when every agent is learning and the action space is hybrid; and how to learn across heterogeneous clients without exposing their data.
+          These days I work on two questions: how to coordinate a swarm when every agent is learning and the action space is hybrid; and how to learn across heterogeneous clients without exposing their data.
         </p>
         <p>
           This site is where I keep the working notes — the failed experiments, the diagrams that finally made sense, and the papers I wish someone had explained to me earlier.
@@ -133,7 +133,7 @@
         <dl class="portrait-facts">
           <div>
             <dt>Focus</dt>
-            <dd>UAV networks, federated learning, computer vision</dd>
+            <dd>UAV networks, federated learning, edge computing</dd>
           </div>
           <div>
             <dt>School</dt>
@@ -152,29 +152,18 @@
         <div class="section-head">
           <div>
             <p class="section-label"><b>01</b> Research</p>
-            <h2 class="section-title">Three questions I keep returning to.</h2>
+            <h2 class="section-title">Two questions I keep returning to.</h2>
           </div>
           <a class="section-link" href="research.html">Research page <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
 
         <div class="about-research-grid">
-          <article class="about-thread">
-            <div class="about-thread-top">
-              <span>MVA 2026</span>
-              <span class="num">01</span>
-            </div>
-            <h3>Can a detector see what is almost not there?</h3>
-            <p>TARG-YOLO: small-target detection for UAVs, with RepMS, DDetHead, and TARG-IoU. 89.93% mAP on DUT Anti-UAV.</p>
-            <div class="about-thread-links">
-              <a href="research.html">Research page ↗</a>
-              <a href="https://doi.org/10.1007/s00138-026-01792-2">Paper DOI ↗</a>
-            </div>
-          </article>
+          
 
           <article class="about-thread">
             <div class="about-thread-top">
               <span>IEEE TVT 2026</span>
-              <span class="num">02</span>
+              <span class="num">01</span>
             </div>
             <h3>How do you coordinate a swarm when everyone is learning?</h3>
             <p>MAPA-MARL: meta-policy multi-agent RL for hybrid action spaces, fairness constraints, and non-stationary UAV networks.</p>
@@ -187,7 +176,7 @@
           <article class="about-thread">
             <div class="about-thread-top">
               <span>IEEE IoTJ 2026</span>
-              <span class="num">03</span>
+              <span class="num">02</span>
             </div>
             <h3>Can privacy and useful learning coexist?</h3>
             <p>PQ-FRL: quality-aware federated reinforcement learning for UAV-assisted edge computing under DP noise and Non-IID data.</p>
@@ -231,11 +220,11 @@
       <div class="timeline">
         <div class="timeline-item">
           <time datetime="2026">2026</time>
-          <p><strong>Three papers in one year:</strong> TARG-YOLO in <em>Machine Vision and Applications</em>, MAPA-MARL in <em>IEEE Transactions on Vehicular Technology</em>, and PQ-FRL in <em>IEEE Internet of Things Journal</em>.</p>
+          <p><strong>Two first-author papers:</strong> MAPA-MARL in <em>IEEE Transactions on Vehicular Technology</em> and PQ-FRL in <em>IEEE Internet of Things Journal</em>.</p>
         </div>
         <div class="timeline-item">
           <time datetime="2025">2025</time>
-          <p>Released the TARG-YOLO implementation on GitHub and started keeping research notes in public.</p>
+          <p>Started working on multi-agent learning for UAV-assisted edge computing, and began keeping research notes in public.</p>
         </div>
         <div class="timeline-item">
           <time datetime="2024">2024</time>
@@ -277,14 +266,6 @@
             <span>IEEE IoTJ 2026</span>
           </div>
           <div class="link-row">
-            <a href="https://doi.org/10.1007/s00138-026-01792-2">TARG-YOLO paper</a>
-            <span>MVA 2026</span>
-          </div>
-          <div class="link-row">
-            <a href="https://github.com/hkhldzf/TARG-YOLO">TARG-YOLO source</a>
-            <span>Code</span>
-          </div>
-          <div class="link-row">
             <a href="https://hkhldzf.github.io/">VectorBlog archive</a>
             <span>2023–2024</span>
           </div>
@@ -308,8 +289,8 @@
       <div class="footer-cta">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let’s talk about <em>small things.</em></h2>
-          <p>If you work on UAV networks, federated learning, or computer vision — or just want to compare notes — send a message or find me on GitHub.</p>
+          <h2>Let’s talk about <em>systems that learn.</em></h2>
+          <p>If you work on UAV networks, federated learning, or privacy-preserving systems — or just want to compare notes — send a message or find me on GitHub.</p>
         </div>
         <a class="btn btn--solid" href="contact.html">Leave a message <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
@@ -341,7 +322,6 @@
           <h3>Elsewhere</h3>
           <a href="https://github.com/vectordai2000">GitHub</a>
           <a href="https://github.com/hkhldzf">Previous GitHub</a>
-          <a href="https://doi.org/10.1007/s00138-026-01792-2">Paper DOI</a>
           <a href="https://hkhldzf.github.io/">Old blog</a>
         </div>
       </div>
@@ -354,6 +334,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261017"></script>
+  <script src="assets/js/main.js?v=20261018"></script>
 </body>
 </html>

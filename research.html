@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research — Zifeng Dai</title>
-  <meta name="description" content="Research on small-object detection for UAVs: TARG-YOLO, RepMS, DDetHead, and TARG-IoU, published in Machine Vision and Applications.">
+  <meta name="description" content="Research on UAV networks, multi-agent reinforcement learning, and privacy-preserving federated learning.">
   <meta name="author" content="Zifeng Dai">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research — Zifeng Dai">
-  <meta property="og:description" content="Small-object detection for UAVs: TARG-YOLO, RepMS, DDetHead, and TARG-IoU.">
-  <meta property="og:image" content="https://vectordai2000.github.io/assets/og.png">
+  <meta property="og:description" content="UAV networks, multi-agent RL, and privacy-preserving federated learning.">
+  <meta property="og:image" content="https://vectordai2000.github.io/assets/og-uav.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Zifeng Dai — computer vision and security">
+  <meta property="og:image:alt" content="Zifeng Dai — UAV networks and federated learning">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261017">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261018">
   <script>
     (function () {
       try {
@@ -73,10 +73,10 @@
   <main id="main">
     <section class="page-head" data-index="01">
       <div class="wrap">
-        <p class="eyebrow">Research · Computer vision &amp; security</p>
-        <h1>Seeing <em>small things.</em></h1>
+        <p class="eyebrow">Research · UAV networks &amp; federated learning</p>
+        <h1>Learning in <em>the sky.</em></h1>
         <p class="page-lede">
-          A small UAV may occupy only a handful of pixels in a frame. My research asks how to find it anyway — reliably, efficiently, and in scenes that are designed to hide it.
+          I work on UAV-assisted edge computing: how swarms coordinate, how they learn across heterogeneous data, and how to do it without exposing what they see.
         </p>
       </div>
     </section>
@@ -84,25 +84,25 @@
     <section class="research-lede">
       <div class="wrap research-lede-inner">
         <p>
-          Small-target detection is a problem of <em>vanishing evidence</em>. By the time a feature pyramid reaches the deeper layers, the object may already be gone. TARG-YOLO is our attempt to keep that evidence alive long enough to act on it.
+          A UAV swarm is a distributed system with a deadline. The hard problems are not only where to fly, but how to learn together under constraints — and how to keep the data that trains the policy private.
         </p>
         <aside class="research-side">
           <dl>
             <div class="meta-row">
               <dt>Field</dt>
-              <dd>Computer vision · UAV security</dd>
+              <dd>UAV networks · multi-agent RL · federated learning</dd>
             </div>
             <div class="meta-row">
               <dt>Group</dt>
               <dd>School of Cyberspace Science and Technology, BIT</dd>
             </div>
             <div class="meta-row">
-              <dt>Venue</dt>
-              <dd>Machine Vision and Applications, 2026</dd>
+              <dt>Papers</dt>
+              <dd>IEEE TVT 2026 · IEEE IoT Journal 2026</dd>
             </div>
             <div class="meta-row">
-              <dt>Code</dt>
-              <dd><a href="https://github.com/hkhldzf/TARG-YOLO" style="border-bottom:1px solid var(--line-strong);">hkhldzf/TARG-YOLO</a></dd>
+              <dt>Notes</dt>
+              <dd><a href="blog.html" style="border-bottom:1px solid var(--line-strong);">Two paper notes</a></dd>
             </div>
           </dl>
         </aside>
@@ -111,31 +111,34 @@
 
     <section class="section section--paper">
       <div class="wrap research-detail">
-        <article>
+        <article class="pub-entry" id="mapa-marl">
+          <p class="paper-kicker">
+            <span class="paper-tag">First-author paper</span>
+            <span>IEEE TVT 2026</span>
+          </p>
           <div class="paper-detail-head">
-            <h2>TARG-YOLO: an efficient small target detection framework for UAV</h2>
-            <a class="section-link" href="https://doi.org/10.1007/s00138-026-01792-2">DOI <span class="arrow" aria-hidden="true">↗</span></a>
+            <h2>Meta-Policy-Based Multi-Agent Reinforcement Learning for Dynamic UAV Networks: Resolving Hybrid Action Spaces and Non-Stationarity</h2>
+            <a class="section-link" href="https://doi.org/10.1109/TVT.2026.3700721">DOI <span class="arrow" aria-hidden="true">↗</span></a>
           </div>
 
           <p class="paper-detail-meta">
-            <span>Yan Du, <strong style="color:var(--ink);">Zifeng Dai</strong>, Teng Wu, Changzhen Hu, Shengjun Wei*</span>
-            <span>Machine Vision and Applications 37(2), Article 35</span>
-            <span>March 2026</span>
-            <span>*Corresponding author</span>
+            <span><strong>Zifeng Dai</strong>, Hui Xie, Shengjun Wei, Changzhen Hu</span>
+            <span>IEEE Transactions on Vehicular Technology</span>
+            <span>2026</span>
           </p>
 
           <div class="metric-row">
             <div class="metric">
-              <strong>89.93%</strong>
-              <span>mAP on DUT Anti-UAV</span>
+              <strong>79.1%</strong>
+              <span>QoS at 80 devices</span>
             </div>
             <div class="metric">
-              <strong>+4.22</strong>
-              <span>over YOLOv9 baseline</span>
+              <strong>18.5 MB</strong>
+              <span>onboard memory</span>
             </div>
             <div class="metric">
-              <strong>+3.54</strong>
-              <span>over YOLOv12</span>
+              <strong>1.2 ms</strong>
+              <span>TensorRT inference</span>
             </div>
           </div>
 
@@ -143,76 +146,138 @@
             <div class="prose">
               <h2>The problem</h2>
               <p>
-                Small unmanned aerial vehicles are agile, visually tiny, and often photographed against cluttered backgrounds. That combination is difficult for detectors built around the assumption that objects arrive at a useful scale. Downsampling helps a network see context, but it can also erase the few pixels that distinguish a distant UAV from a bird, a roof vent, or noise.
+                A UAV-assisted edge network is a coordination problem wearing the costume of a control problem. Each UAV chooses where to fly and which tasks to offload; those choices change the channel quality, the compute load, and the best response of every other UAV. By the time one agent has learned a good policy, its neighbors have changed theirs.
               </p>
               <p>
-                The paper frames the task around three failure modes: features that fade before they reach the detection head, background regions that dominate the response, and localization losses that are too forgiving for tiny boxes.
+                Three bottlenecks make multi-agent reinforcement learning hard here: hybrid action spaces, non-convex fairness constraints, and non-stationarity. A policy can look excellent on average while starving a subset of devices; a continuous relaxation of the discrete offloading decision can drown the actor in gradient variance.
               </p>
 
-              <h2>Three interventions</h2>
+              <h2>The design</h2>
               <p>
-                <strong>RepMS</strong> changes how features are extracted, dynamically shifting focus toward regions that carry evidence. <strong>DDetHead</strong> is a detection head designed to reduce background redundancy, so the final prediction is less distracted by everything that is not the target. <strong>TARG-IoU</strong> is a loss function that balances precise localization against sensitivity to very small objects — two goals that are not always aligned.
+                MAPA-MARL formulates the joint optimization as a constrained Markov decision process. A PID-Lagrangian adds an integral term for steady-state fairness error and an EMA-filtered derivative term to damp high-frequency oscillations. The dual-head actor separates continuous flight from discrete offloading, with a Zero-temperature Gumbel-Rao estimator providing a low-variance gradient proxy for the discrete branch.
               </p>
               <p>
-                None of these pieces is useful in isolation. The interesting part is the interaction: better features give the head more to work with, while the loss pushes the whole pipeline to care about boxes that occupy almost no area.
+                A sparsity-induced inverse-distance soft mask acts as a topological regularizer, blocking gradients from distant agents whose state is barely coupled to the current decision. An RNN-based opponent model with Hessian-vector product curvature compensation runs asynchronously in the cloud; the UAV runs only the actor, with no inter-UAV parameter sharing at runtime.
               </p>
 
               <h2>The evidence</h2>
               <p>
-                On the DUT Anti-UAV dataset, the framework reports a mean average precision of <strong>89.93%</strong>, 4.22 points above the YOLOv9 baseline and 3.54 points above YOLOv12. These numbers are specific to the dataset and evaluation protocol in the paper; they are a starting point for comparison, not a universal claim about all aerial scenes.
-              </p>
-
-              <h2>What comes next</h2>
-              <p>
-                Detection is only one part of a useful system. I am interested in what happens after the box: how these models behave across sensors and weather, whether temporal information from video can recover targets that a single frame loses, how to run them within the power budget of an edge device, and how to make aerial surveillance systems more accountable when they are deployed in public space.
+                At eighty devices, MAPA-MARL sustains 79.1% ± 1.8% QoS while MADDPG collapses to 43.1%. Starvation falls to 1.8%, with a Jain index of 0.88 ± 0.02. The system records 0.1 ± 0.1 collisions per episode and returns to 90% QoS within 45 time slots after twenty new devices join at once.
               </p>
               <p>
-                That last question is where computer vision meets security — and the reason I keep reading about privacy-preserving computation alongside detection papers.
+                The edge footprint is 18.5 MB, and TensorRT INT8 inference runs at about 1.2 ms on a Jetson Xavier NX. These are simulation results under a quasi-steady aerodynamic power model and a 2 Hz planning loop; the paper is explicit that a field deployment is the next test.
               </p>
             </div>
 
             <aside class="side-note">
               <h3>Read or cite</h3>
-              <p>The article is published in <em>Machine Vision and Applications</em>. The code and training scripts are public on GitHub.</p>
-              <a class="btn btn--solid" href="https://doi.org/10.1007/s00138-026-01792-2">Open the paper <span class="arrow" aria-hidden="true">↗</span></a>
-              <a class="btn btn--ghost" href="https://github.com/hkhldzf/TARG-YOLO" style="margin-top:8px;">View the code <span class="arrow" aria-hidden="true">↗</span></a>
-              <a class="btn btn--text" href="#citation" style="margin-top:14px; width:auto;">Jump to citation <span class="arrow" aria-hidden="true">↓</span></a>
+              <p>Published in <em>IEEE Transactions on Vehicular Technology</em>. The note walks through the three failure modes and the design choices.</p>
+              <a class="btn btn--solid" href="https://doi.org/10.1109/TVT.2026.3700721">Open the paper <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn--ghost" href="posts/mapa-marl-uav-networks.html" style="margin-top:8px;">Read the note <span class="arrow" aria-hidden="true">→</span></a>
             </aside>
           </div>
 
           <div class="contribution-grid">
             <div class="contribution">
               <span class="num">MODULE 01</span>
-              <h3>RepMS</h3>
-              <p>Feature extraction that adjusts its focus instead of treating every spatial region the same way.</p>
+              <h3>PID-Lagrangian</h3>
+              <p>A constrained update that damps oscillation and holds Jain’s fairness near the boundary.</p>
             </div>
             <div class="contribution">
               <span class="num">MODULE 02</span>
-              <h3>DDetHead</h3>
-              <p>A detection head built to suppress background redundancy and keep small-target responses visible.</p>
+              <h3>Dual-head ZGR</h3>
+              <p>Separate continuous and discrete streams, with a low-variance gradient for offloading.</p>
             </div>
             <div class="contribution">
               <span class="num">MODULE 03</span>
-              <h3>TARG-IoU</h3>
-              <p>A localization loss that rebalances precision and sensitivity for objects measured in pixels.</p>
+              <h3>Mask + HVP</h3>
+              <p>Blocks polluted gradients from distant agents; meta-learns peer evolution without parameter sharing.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub-entry" id="pq-frl">
+          <p class="paper-kicker">
+            <span class="paper-tag">First-author paper</span>
+            <span>IEEE IoT Journal 2026</span>
+          </p>
+          <div class="paper-detail-head">
+            <h2>PQ-FRL: A Privacy-Preserving and Quality-Aware Federated Reinforcement Learning for UAV-Assisted Edge Computing</h2>
+            <a class="section-link" href="https://doi.org/10.1109/JIOT.2026.3695149">DOI <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+
+          <p class="paper-detail-meta">
+            <span><strong>Zifeng Dai</strong>, Hui Xie, Shengjun Wei, Changzhen Hu</span>
+            <span>IEEE Internet of Things Journal 13(15)</span>
+            <span>2026</span>
+          </p>
+
+          <div class="metric-row">
+            <div class="metric">
+              <strong>2.6 s</strong>
+              <span>average latency</span>
+            </div>
+            <div class="metric">
+              <strong>45 min</strong>
+              <span>to target cost</span>
+            </div>
+            <div class="metric">
+              <strong>&lt;0.1%</strong>
+              <span>communication overhead</span>
             </div>
           </div>
 
-          <div class="citation" id="citation">
-            <div class="citation-head">
-              <span>BibTeX</span>
-              <button class="copy-btn" type="button" data-copy="#bibtex">Copy BibTeX</button>
+          <div class="research-copy">
+            <div class="prose">
+              <h2>The problem</h2>
+              <p>
+                Federated learning lets UAVs share model updates instead of raw observations. Differential privacy makes that bargain harder: the noise that protects a client also looks like a bad update. When every client sees a different environment, the server cannot tell whether a weak update is noise or an honest report from a hard place.
+              </p>
+              <p>
+                Standard FedAvg gives every client the same weight, which is actively harmful when DP noise and Non-IID data are coupled. Reputation-based aggregation looks at history, not the quality of the update in front of it.
+              </p>
+
+              <h2>The design</h2>
+              <p>
+                PQ-FRL clips and perturbs each local actor update before it leaves the UAV. The server then weights updates using a DP-protected average local reward — an observable proxy for how well a local policy is doing in its own environment. High-quality updates influence the global model more; noisy or outdated ones are down-weighted.
+              </p>
+              <p>
+                A straight-through estimator keeps the discrete offloading decision differentiable, and a conditionally shaped reward discourages both lazy and greedy local policies. The extra communication is one scalar per UAV, under 0.1% of the standard upload.
+              </p>
+
+              <h2>The evidence</h2>
+              <p>
+                In a 1 km² deployment with four UAVs, twenty ground users, a per-round budget of ε = 1.0, and a Non-IID hotspot scenario, PQ-FRL holds average latency at 2.6 s. DP-FedAvg and local-only training sit at 4.5 s and 4.8 s, with task drop rates of 26.3% and 40.5% under a 5 s deadline.
+              </p>
+              <p>
+                It reaches a target system cost of 4.0 in about 45 minutes on an RTX 3090; DP-FedAvg needs more than 140 minutes. The guarantee is per-round DP, and four UAVs are a proof-of-concept — both caveats matter.
+              </p>
             </div>
-            <pre id="bibtex"><code>@article{du2026targyolo,
-  title     = {TARG-YOLO: an efficient small target detection framework for UAV},
-  author    = {Du, Yan and Dai, Zifeng and Wu, Teng and Hu, Changzhen and Wei, Shengjun},
-  journal   = {Machine Vision and Applications},
-  volume    = {37},
-  number    = {2},
-  pages     = {35},
-  year      = {2026},
-  doi       = {10.1007/s00138-026-01792-2}
-}</code></pre>
+
+            <aside class="side-note">
+              <h3>Read or cite</h3>
+              <p>Published in <em>IEEE Internet of Things Journal</em>. The note focuses on the privacy-utility trade-off and the aggregation design.</p>
+              <a class="btn btn--solid" href="https://doi.org/10.1109/JIOT.2026.3695149">Open the paper <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn--ghost" href="posts/pq-frl-uav-edge.html" style="margin-top:8px;">Read the note <span class="arrow" aria-hidden="true">→</span></a>
+            </aside>
+          </div>
+
+          <div class="contribution-grid">
+            <div class="contribution">
+              <span class="num">MODULE 01</span>
+              <h3>Client-side DP</h3>
+              <p>Clip and perturb actor updates before upload, with a per-round privacy budget.</p>
+            </div>
+            <div class="contribution">
+              <span class="num">MODULE 02</span>
+              <h3>QA aggregation</h3>
+              <p>Weight updates by a DP-protected reward signal instead of a reputation heuristic.</p>
+            </div>
+            <div class="contribution">
+              <span class="num">MODULE 03</span>
+              <h3>Mixed-action STE</h3>
+              <p>Differentiable offloading decisions with a reward shaped to avoid lazy or greedy local equilibria.</p>
+            </div>
           </div>
         </article>
       </div>
@@ -224,8 +289,8 @@
       <div class="footer-cta">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let’s talk about <em>small things.</em></h2>
-          <p>If you work on small-object detection, UAV vision, or privacy-preserving systems — or just want to compare notes — the best place to reach me is GitHub.</p>
+          <h2>Let’s talk about <em>systems that learn.</em></h2>
+          <p>If you work on UAV networks, federated learning, or privacy-preserving systems — or just want to compare notes — send a message or find me on GitHub.</p>
         </div>
         <a class="btn btn--solid" href="contact.html">Leave a message <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
@@ -241,7 +306,7 @@
             </span>
             <span class="brand-name">Zifeng Dai</span>
           </a>
-          <p>Notes on computer vision, security, and the slow craft of research. Written in Beijing.</p>
+          <p>Notes on networked systems, learning, and the slow craft of research. Written in Beijing.</p>
         </div>
 
         <div class="footer-col">
@@ -257,7 +322,6 @@
           <h3>Elsewhere</h3>
           <a href="https://github.com/vectordai2000">GitHub</a>
           <a href="https://github.com/hkhldzf">Previous GitHub</a>
-          <a href="https://doi.org/10.1007/s00138-026-01792-2">Paper DOI</a>
           <a href="https://hkhldzf.github.io/">Old blog</a>
         </div>
       </div>
@@ -270,6 +334,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261017"></script>
+  <script src="assets/js/main.js?v=20261018"></script>
 </body>
 </html>
