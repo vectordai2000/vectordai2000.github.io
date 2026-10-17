@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Writing — Zifeng Dai</title>
-  <meta name="description" content="Notes on computer vision, small-object detection, privacy, and the process of learning to do research.">
+  <meta name="description" content="Notes on UAV networks, federated learning, privacy, and the engineering behind the research.">
   <meta name="author" content="Zifeng Dai">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Writing — Zifeng Dai">
-  <meta property="og:description" content="Notes on computer vision, small-object detection, privacy, and the research process.">
+  <meta property="og:description" content="Notes on UAV networks, federated learning, privacy, and the research process.">
   <meta property="og:image" content="https://vectordai2000.github.io/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -72,10 +72,10 @@
   <main id="main">
     <section class="page-head" data-index="02">
       <div class="wrap">
-        <p class="eyebrow">Writing · 2023—2026</p>
+        <p class="eyebrow">Writing · 2026</p>
         <h1>Notes from <em>the lab.</em></h1>
         <p class="page-lede">
-          Short essays on vision, privacy, and the parts of research that don’t make it into the paper. Some of these started as private notes; a few were first published on my old blog.
+          Notes on UAV networks, federated learning, and the engineering behind them. These are the parts of the work that do not fit into a paper: the design choices, the failure modes, and the numbers I keep checking.
         </p>
       </div>
     </section>
@@ -84,64 +84,37 @@
       <div class="wrap">
         <div class="filter-bar" role="group" aria-label="Filter posts by topic">
           <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-          <button class="chip" type="button" data-filter="research" aria-pressed="false">Research</button>
+          <button class="chip" type="button" data-filter="uav" aria-pressed="false">UAV networks</button>
+          <button class="chip" type="button" data-filter="multi-agent-rl" aria-pressed="false">Multi-agent RL</button>
+          <button class="chip" type="button" data-filter="federated-learning" aria-pressed="false">Federated learning</button>
           <button class="chip" type="button" data-filter="privacy" aria-pressed="false">Privacy</button>
-          <button class="chip" type="button" data-filter="learning" aria-pressed="false">Learning</button>
-          <span class="mono muted" style="margin-left:auto; align-self:center;"><span data-count>4</span> <span data-count-label>notes</span></span>
+          <span class="mono muted" style="margin-left:auto; align-self:center;"><span data-count>2</span> <span data-count-label>notes</span></span>
         </div>
 
         <div class="post-list blog-list">
-          <a class="post-row" href="posts/why-small-targets-are-hard.html" data-tags="research">
-            <time class="post-date" datetime="2026-10-17">17 Oct<span class="year">2026</span></time>
+          <a class="post-row" href="posts/mapa-marl-uav-networks.html" data-tags="uav multi-agent-rl">
+            <time class="post-date" datetime="2026-08-22">22 Aug<span class="year">2026</span></time>
             <div class="post-body">
-              <h3>Why small targets are hard</h3>
-              <p>A few pixels, a lot of sky, and the three ideas behind TARG-YOLO.</p>
+              <h3>Meta-policies for restless UAV networks</h3>
+              <p>Hybrid actions, fairness constraints, and coordination when every agent keeps learning.</p>
               <div class="post-tags">
-                <span class="tag">Computer vision</span>
-                <span class="tag">Research</span>
-                <span class="tag">6 min read</span>
+                <span class="tag">UAV networks</span>
+                <span class="tag">Multi-agent RL</span>
+                <span class="tag">8 min read</span>
               </div>
             </div>
             <span class="post-arrow" aria-hidden="true">↗</span>
           </a>
 
-          <a class="post-row" href="posts/building-targ-yolo.html" data-tags="research">
-            <time class="post-date" datetime="2026-03-20">20 Mar<span class="year">2026</span></time>
+          <a class="post-row" href="posts/pq-frl-uav-edge.html" data-tags="uav federated-learning privacy">
+            <time class="post-date" datetime="2026-08-01">01 Aug<span class="year">2026</span></time>
             <div class="post-body">
-              <h3>Notes from building TARG-YOLO</h3>
-              <p>What starting from a strong baseline taught me about evaluation, branches, and repository hygiene.</p>
+              <h3>Privacy without paralysis</h3>
+              <p>Federated learning for UAV edge computing when DP noise meets Non-IID data.</p>
               <div class="post-tags">
-                <span class="tag">Research</span>
-                <span class="tag">Engineering</span>
-                <span class="tag">6 min read</span>
-              </div>
-            </div>
-            <span class="post-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="post-row" href="posts/privacy-on-a-public-ledger.html" data-tags="privacy">
-            <time class="post-date" datetime="2024-05-09">09 May<span class="year">2024</span></time>
-            <div class="post-body">
-              <h3>Privacy on a public ledger</h3>
-              <p>Identity, transactions, and why “just use a mixer” is not a privacy model.</p>
-              <div class="post-tags">
+                <span class="tag">Federated learning</span>
                 <span class="tag">Privacy</span>
-                <span class="tag">Notes</span>
-                <span class="tag">6 min read</span>
-              </div>
-            </div>
-            <span class="post-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="post-row" href="posts/first-mile-of-machine-learning.html" data-tags="learning">
-            <time class="post-date" datetime="2023-06-14">14 Jun<span class="year">2023</span></time>
-            <div class="post-body">
-              <h3>The first mile of machine learning</h3>
-              <p>Starting graduate school, opening Andrew Ng’s course, and learning to frame a problem before solving it.</p>
-              <div class="post-tags">
-                <span class="tag">Learning</span>
-                <span class="tag">Notes</span>
-                <span class="tag">4 min read</span>
+                <span class="tag">7 min read</span>
               </div>
             </div>
             <span class="post-arrow" aria-hidden="true">↗</span>
@@ -162,7 +135,7 @@
         <div>
           <p class="eyebrow">Contact</p>
           <h2>Let’s talk about <em>small things.</em></h2>
-          <p>If you work on small-object detection, UAV vision, or privacy-preserving systems — or just want to compare notes — the best place to reach me is GitHub.</p>
+          <p>If you work on UAV networks, federated learning, or privacy-preserving systems — or just want to compare notes — the best place to reach me is GitHub.</p>
         </div>
         <a class="btn btn--solid" href="https://github.com/vectordai2000">Say hello <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
