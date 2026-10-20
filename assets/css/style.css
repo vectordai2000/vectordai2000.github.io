@@ -3129,3 +3129,460 @@ p {
     transform: none;
   }
 }
+
+/* =========================================================
+   Homepage — academic layout
+   Scoped to body.home so the other pages keep their layout.
+   ========================================================= */
+.hm-intro {
+  padding: clamp(44px, 6vw, 76px) 0 clamp(40px, 5vw, 60px);
+  border-bottom: 1px solid var(--line);
+}
+
+.hm-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 248px;
+  grid-template-areas:
+    "head portrait"
+    "bio portrait";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(32px, 6vw, 88px);
+  row-gap: 0;
+  align-items: start;
+}
+
+.hm-head-block {
+  grid-area: head;
+}
+
+.hm-bio {
+  grid-area: bio;
+  min-width: 0;
+}
+
+.hm-affil {
+  max-width: 52ch;
+  margin-top: 18px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.hm-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.7rem, 4.6vw, 3.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.hm-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hm-role {
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.hm-lede {
+  max-width: 64ch;
+  margin-top: 22px;
+  font-size: 1.02rem;
+  line-height: 1.72;
+  color: var(--ink-2);
+}
+
+.hm-lede + .hm-lede {
+  margin-top: 15px;
+}
+
+.hm-lede a {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.hm-lede a:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
+
+.hm-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.hm-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.hm-links a:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
+
+/* Portrait */
+.hm-portrait {
+  grid-area: portrait;
+  justify-self: end;
+  width: 100%;
+  max-width: 248px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+
+.hm-portrait svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Bands */
+.hm-band {
+  padding: clamp(46px, 5.6vw, 72px) 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.hm-sec {
+  padding: clamp(46px, 5.6vw, 72px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hm-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+
+.hm-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hm-head-link {
+  flex: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.hm-head-link:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
+
+/* Publications */
+.hm-pubs {
+  list-style: none;
+}
+
+.hm-pub {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 40px);
+  padding: clamp(24px, 3.2vw, 34px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.hm-pub:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.hm-pub:last-child {
+  padding-bottom: 0;
+}
+
+.hm-venue {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.hm-venue span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.hm-pub-main {
+  min-width: 0;
+}
+
+.hm-pub-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  line-height: 1.28;
+  letter-spacing: -0.018em;
+  text-wrap: pretty;
+}
+
+.hm-pub-title a {
+  transition: color 0.2s var(--ease);
+}
+
+.hm-pub-title a:hover {
+  color: var(--accent-strong);
+}
+
+.hm-authors {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.hm-authors strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hm-pub-desc {
+  max-width: 72ch;
+  margin-top: 12px;
+  font-size: 0.96rem;
+  line-height: 1.68;
+  color: var(--ink-2);
+}
+
+.hm-pub-desc strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hm-pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-top: 16px;
+}
+
+.hm-pub-links a {
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.hm-pub-links a:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
+
+/* Research areas */
+.hm-areas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.hm-area {
+  padding: clamp(20px, 2.6vw, 28px);
+  background: var(--bg);
+}
+
+.hm-area h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.14rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.hm-area p {
+  max-width: 46ch;
+  margin-top: 8px;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+/* Writing */
+.hm-posts {
+  border-top: 1px solid var(--line);
+}
+
+.hm-post {
+  display: grid;
+  grid-template-columns: 124px minmax(0, 1fr) 22px;
+  gap: 24px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hm-post-date {
+  padding-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.hm-post-body {
+  display: block;
+  min-width: 0;
+}
+
+.hm-post-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.24rem;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  transition: color 0.2s var(--ease);
+}
+
+.hm-post-note {
+  display: block;
+  max-width: 70ch;
+  margin-top: 6px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.hm-post-arrow {
+  justify-self: end;
+  padding-top: 4px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  transition: color 0.2s var(--ease), transform 0.25s var(--ease);
+}
+
+.hm-post:hover .hm-post-title {
+  color: var(--accent-strong);
+}
+
+.hm-post:hover .hm-post-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* Contact */
+.hm-contact {
+  padding: clamp(36px, 4.2vw, 52px) 0;
+  border-bottom: 0;
+}
+
+.hm-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px 40px;
+  align-items: center;
+}
+
+.hm-contact-copy {
+  max-width: 60ch;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.hm-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home .site-footer {
+  padding-top: clamp(40px, 5vw, 60px);
+}
+
+@media (max-width: 900px) {
+  .hm-intro-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "head"
+      "portrait"
+      "bio";
+    grid-template-rows: auto;
+  }
+
+  .hm-portrait {
+    justify-self: start;
+    width: min(100%, 190px);
+    margin: 26px 0 6px;
+  }
+
+  .hm-pub {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .hm-venue span {
+    display: inline;
+    margin-left: 6px;
+  }
+
+  .hm-areas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hm-post {
+    grid-template-columns: minmax(0, 1fr) 22px;
+    gap: 6px 16px;
+  }
+
+  .hm-post-date {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+
+  .hm-contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .hm-name {
+    font-size: 2.9rem;
+  }
+
+  .hm-lede {
+    font-size: 0.98rem;
+  }
+}

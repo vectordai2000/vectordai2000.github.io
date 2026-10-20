@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zifeng Dai — UAV networks, federated learning, and security</title>
-  <meta name="description" content="Zifeng Dai is a graduate student at Beijing Institute of Technology working on UAV networks, federated learning, and security. Notes, research, and code.">
+  <title>Zifeng Dai — Graduate student, Beijing Institute of Technology</title>
+  <meta name="description" content="Zifeng Dai is a graduate student at Beijing Institute of Technology. Research on UAV networks, multi-agent reinforcement learning, and privacy-preserving federated learning.">
   <meta name="author" content="Zifeng Dai">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Zifeng Dai — UAV networks, federated learning, and security">
-  <meta property="og:description" content="Graduate student at BIT. UAV networks, federated learning, and notes from the research process.">
+  <meta property="og:title" content="Zifeng Dai — Graduate student, Beijing Institute of Technology">
+  <meta property="og:description" content="UAV networks, multi-agent reinforcement learning, and privacy-preserving federated learning.">
   <meta property="og:image" content="https://vectordai2000.github.io/assets/og-uav.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
   <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261018">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261020">
   <script>
     (function () {
       try {
@@ -27,8 +27,24 @@
       } catch (error) {}
     })();
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Zifeng Dai",
+      "jobTitle": "Graduate student",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Beijing Institute of Technology",
+        "department": "School of Cyberspace Science and Technology"
+      },
+      "url": "https://vectordai2000.github.io/",
+      "sameAs": ["https://github.com/vectordai2000"],
+      "knowsAbout": ["UAV networks", "multi-agent reinforcement learning", "federated learning", "differential privacy"]
+    }
+  </script>
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -71,225 +87,164 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Graduate student · BIT</p>
-          <h1>
-            <span>Zifeng</span>
-            <span><em>Dai</em><span class="period">.</span></span>
-          </h1>
-          <p class="hero-lede">
-            I work on <strong>UAV networks, federated learning, and security</strong> — coordinating swarms, learning across heterogeneous data, and writing down what I learn along the way.
+    <section class="hm-intro">
+      <div class="wrap hm-intro-grid">
+        <div class="hm-head-block">
+          <h1 class="hm-name">Zifeng <em>Dai</em></h1>
+          <p class="hm-affil">Graduate student, Beijing Institute of Technology</p>
+          <p class="hm-role">School of Cyberspace Science and Technology</p>
+        </div>
+
+        <figure class="hm-portrait">
+          <svg viewBox="0 0 400 400" role="img" aria-label="Monogram of Zifeng Dai">
+            <rect width="400" height="400" fill="var(--surface-2)"/>
+            <g stroke="var(--line)" stroke-width="1" opacity="0.65">
+              <path d="M0 80h400M0 160h400M0 240h400M0 320h400M80 0v400M160 0v400M240 0v400M320 0v400"/>
+            </g>
+            <g fill="none" stroke="var(--accent)" stroke-width="1.6">
+              <path d="M40 80V40h40M320 40h40v40M360 320v40h-40M80 360H40v-40"/>
+            </g>
+            <text x="196" y="250" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="158" fill="var(--ink)">ZD</text>
+            <rect x="314" y="232" width="10" height="10" fill="var(--accent)"/>
+            <text x="40" y="380" font-family="Consolas, 'Cascadia Code', monospace" font-size="11" letter-spacing="3" fill="var(--muted)">ZIFENG DAI</text>
+            <text x="360" y="380" text-anchor="end" font-family="Consolas, 'Cascadia Code', monospace" font-size="11" letter-spacing="3" fill="var(--muted)">BIT · 2026</text>
+          </svg>
+        </figure>
+
+        <div class="hm-bio">
+          <p class="hm-lede">
+            I study how swarms of UAVs coordinate and learn together — and how to do it without exposing what each node sees. My work sits between networked systems and machine learning: multi-agent reinforcement learning for hybrid action spaces, and privacy-preserving federated learning over non-IID data.
           </p>
-          <div class="hero-actions">
-            <a class="btn btn--solid" href="research.html">See the research <span class="arrow">↗</span></a>
-            <a class="btn btn--ghost" href="blog.html">Read the notes <span class="arrow">→</span></a>
-          </div>
+          <p class="hm-lede">
+            Two first-author papers came out of this, both with public code: <a href="research.html#mapa-marl">MAPA-MARL</a> in <em>IEEE TVT</em> 2026 and <a href="research.html#pq-frl">PQ-FRL</a> in <em>IEEE IoT-J</em> 2026. The notes behind them — including what did not fit in the papers — are on this site.
+          </p>
+
+          <ul class="hm-links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://github.com/vectordai2000">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a href="about.html">About</a></li>
+            <!-- Add when available: <li><a href="mailto:...">Email</a></li> and Google Scholar / CV links. -->
+          </ul>
         </div>
-
-        <aside class="hero-card" aria-label="Profile at a glance" data-reveal>
-          <div class="card-top">
-            <span class="avatar avatar--mono" aria-hidden="true">ZD</span>
-            <div>
-              <p class="card-name">Zifeng Dai</p>
-              <p class="card-handle">@vectordai2000</p>
-            </div>
-          </div>
-
-          <p class="status" style="margin-top:16px;">Graduate student · BIT</p>
-
-          <dl class="card-meta">
-            <div class="meta-row">
-              <dt>Focus</dt>
-              <dd>UAV networks, federated learning</dd>
-            </div>
-            <div class="meta-row">
-              <dt>School</dt>
-              <dd>Cyberspace Science &amp; Technology</dd>
-            </div>
-            <div class="meta-row">
-              <dt>Based</dt>
-              <dd>Beijing, China</dd>
-            </div>
-          </dl>
-
-          <div class="card-links">
-            <a href="https://github.com/vectordai2000">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="about.html">About <span aria-hidden="true">→</span></a>
-          </div>
-          <p class="coords" style="margin-top:14px;">39.96° N · 116.31° E</p>
-        </aside>
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <div class="ticker-group">
-          <span>UAV networks</span>
-          <span>Multi-agent RL</span>
-          <span>Federated learning</span>
-          <span>Differential privacy</span>
-          <span>Edge computing</span>
-          <span>Non-stationarity</span>
-          <span>Privacy &amp; security</span>
-          <span>Research notes</span>
-        </div>
-        <div class="ticker-group">
-          <span>UAV networks</span>
-          <span>Multi-agent RL</span>
-          <span>Federated learning</span>
-          <span>Differential privacy</span>
-          <span>Edge computing</span>
-          <span>Non-stationarity</span>
-          <span>Privacy &amp; security</span>
-          <span>Research notes</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="section" id="research">
+    <section class="hm-band" id="publications" aria-labelledby="publications-title">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-label"><b>01</b> Research</p>
-            <h2 class="section-title">Learning to coordinate, privately.</h2>
-          </div>
-          <a class="section-link" href="research.html">Research details <span class="arrow" aria-hidden="true">↗</span></a>
+        <div class="hm-head">
+          <h2 class="hm-title" id="publications-title">Selected publications</h2>
+          <a class="hm-head-link" href="research.html">Research page <span aria-hidden="true">↗</span></a>
         </div>
 
-        <div class="pub-grid">
-          <article class="pub-card" data-reveal>
-            <div class="pub-top">
-              <span>IEEE TVT · 2026</span>
-              <span class="num">01</span>
+        <ol class="hm-pubs">
+          <li class="hm-pub">
+            <p class="hm-venue">IEEE TVT<span>2026</span></p>
+            <div class="hm-pub-main">
+              <h3 class="hm-pub-title">
+                <a href="https://doi.org/10.1109/TVT.2026.3700721">Meta-Policy-Based Multi-Agent Reinforcement Learning for Dynamic UAV Networks: Resolving Hybrid Action Spaces and Non-Stationarity</a>
+              </h3>
+              <p class="hm-authors"><strong>Zifeng Dai</strong>, Hui Xie, Shengjun Wei, Changzhen Hu</p>
+              <p class="hm-pub-desc">
+                A constrained MARL framework for UAV-assisted edge networks: a PID-Lagrangian for steady-state fairness, a dual-head actor that separates continuous flight from discrete offloading, and an asynchronous opponent model learned without runtime parameter sharing. Holds <strong>79.1% QoS</strong> at 80 devices with an <strong>18.5 MB</strong> on-device footprint.
+              </p>
+              <p class="hm-pub-links">
+                <a href="https://doi.org/10.1109/TVT.2026.3700721">DOI <span aria-hidden="true">↗</span></a>
+                <a href="posts/mapa-marl-uav-networks.html">Paper note <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/vectordai2000/MAPA-MARL">Code <span aria-hidden="true">↗</span></a>
+              </p>
             </div>
-            <h3>Meta-Policy-Based Multi-Agent Reinforcement Learning for Dynamic UAV Networks: Resolving Hybrid Action Spaces and Non-Stationarity</h3>
-            <p class="pub-authors">Zifeng Dai, Hui Xie, Shengjun Wei, Changzhen Hu</p>
-            <p>A meta-policy framework for hybrid action spaces, fairness constraints, and non-stationary UAV networks.</p>
-            <div class="pub-metrics">
-              <div><strong>79.1%</strong><span>QoS at 80 devices</span></div>
-              <div><strong>18.5 MB</strong><span>onboard footprint</span></div>
-              <div><strong>1.2 ms</strong><span>TensorRT inference</span></div>
-            </div>
-            <div class="pub-links">
-              <a href="research.html#mapa-marl">Research details ↗</a>
-              <a href="posts/mapa-marl-uav-networks.html">Paper note ↗</a>
-              <a href="https://github.com/vectordai2000/MAPA-MARL">Code ↗</a>
-            </div>
-          </article>
+          </li>
 
-          <article class="pub-card" data-reveal>
-            <div class="pub-top">
-              <span>IEEE IoT Journal · 2026</span>
-              <span class="num">02</span>
+          <li class="hm-pub">
+            <p class="hm-venue">IEEE IoT-J<span>2026</span></p>
+            <div class="hm-pub-main">
+              <h3 class="hm-pub-title">
+                <a href="https://doi.org/10.1109/JIOT.2026.3695149">PQ-FRL: A Privacy-Preserving and Quality-Aware Federated Reinforcement Learning for UAV-Assisted Edge Computing</a>
+              </h3>
+              <p class="hm-authors"><strong>Zifeng Dai</strong>, Hui Xie, Shengjun Wei, Changzhen Hu</p>
+              <p class="hm-pub-desc">
+                Client-side differential privacy with quality-aware aggregation: the server weights each update by a DP-protected local reward instead of a reputation heuristic, so weak reports from hard environments stop masquerading as noise. Holds <strong>2.6 s</strong> average latency under ε = 1.0 and non-IID hotspots, for under <strong>0.1%</strong> extra communication.
+              </p>
+              <p class="hm-pub-links">
+                <a href="https://doi.org/10.1109/JIOT.2026.3695149">DOI <span aria-hidden="true">↗</span></a>
+                <a href="posts/pq-frl-uav-edge.html">Paper note <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/vectordai2000/pq-frl-demo">Demo code <span aria-hidden="true">↗</span></a>
+              </p>
             </div>
-            <h3>PQ-FRL: A Privacy-Preserving and Quality-Aware Federated Reinforcement Learning for UAV-Assisted Edge Computing</h3>
-            <p class="pub-authors">Zifeng Dai, Hui Xie, Shengjun Wei, Changzhen Hu</p>
-            <p>Quality-aware aggregation for federated learning under differential privacy and Non-IID data.</p>
-            <div class="pub-metrics">
-              <div><strong>2.6 s</strong><span>average latency</span></div>
-              <div><strong>45 min</strong><span>to target cost</span></div>
-              <div><strong>&lt;0.1%</strong><span>communication overhead</span></div>
-            </div>
-            <div class="pub-links">
-              <a href="research.html#pq-frl">Research details ↗</a>
-              <a href="posts/pq-frl-uav-edge.html">Paper note ↗</a>
-              <a href="https://github.com/vectordai2000/pq-frl-demo">Demo code ↗</a>
-            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="hm-sec" id="research" aria-labelledby="research-title">
+      <div class="wrap">
+        <div class="hm-head">
+          <h2 class="hm-title" id="research-title">Research</h2>
+          <a class="hm-head-link" href="research.html">Details <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="hm-areas">
+          <article class="hm-area">
+            <h3>UAV networks &amp; edge computing</h3>
+            <p>Coordination, task offloading, and scheduling in UAV-assisted MEC — under deadline, energy, and fairness constraints.</p>
+          </article>
+          <article class="hm-area">
+            <h3>Multi-agent reinforcement learning</h3>
+            <p>Hybrid action spaces, non-stationary peers, and constrained optimization for agents that have to cooperate.</p>
+          </article>
+          <article class="hm-area">
+            <h3>Federated learning</h3>
+            <p>Aggregation that survives non-IID data, stale clients, and updates that look bad because they come from hard places.</p>
+          </article>
+          <article class="hm-area">
+            <h3>Privacy &amp; security</h3>
+            <p>Differential privacy and poisoning resistance — and an honest account of what the guarantee costs in utility.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="writing">
+    <section class="hm-sec" id="writing" aria-labelledby="writing-title">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-label"><b>02</b> Writing</p>
-            <h2 class="section-title">Notes from the lab.</h2>
-          </div>
-          <a class="section-link" href="blog.html">All writing <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="hm-head">
+          <h2 class="hm-title" id="writing-title">Writing</h2>
+          <a class="hm-head-link" href="blog.html">All notes <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="post-list">
-          <a class="post-row" href="posts/mapa-marl-uav-networks.html" data-reveal>
-            <time class="post-date" datetime="2026-08-22">22 Aug<span class="year">2026</span></time>
-            <div class="post-body">
-              <h3>Meta-policies for restless UAV networks</h3>
-              <p>Hybrid actions, fairness constraints, and coordination when every agent keeps learning.</p>
-              <div class="post-tags">
-                <span class="tag">UAV networks</span>
-                <span class="tag">Multi-agent RL</span>
-              </div>
-            </div>
-            <span class="post-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="post-row" href="posts/pq-frl-uav-edge.html" data-reveal>
-            <time class="post-date" datetime="2026-08-01">01 Aug<span class="year">2026</span></time>
-            <div class="post-body">
-              <h3>Privacy without paralysis</h3>
-              <p>Federated learning for UAV edge computing when DP noise meets Non-IID data.</p>
-              <div class="post-tags">
-                <span class="tag">Federated learning</span>
-                <span class="tag">Privacy</span>
-              </div>
-            </div>
-            <span class="post-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
+        <ul class="hm-posts">
+          <li>
+            <a class="hm-post" href="posts/mapa-marl-uav-networks.html">
+              <time class="hm-post-date" datetime="2026-08-22">22 Aug 2026</time>
+              <span class="hm-post-body">
+                <span class="hm-post-title">Meta-policies for restless UAV networks</span>
+                <span class="hm-post-note">Hybrid actions, fairness constraints, and coordination when every agent keeps learning.</span>
+              </span>
+              <span class="hm-post-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="hm-post" href="posts/pq-frl-uav-edge.html">
+              <time class="hm-post-date" datetime="2026-08-01">01 Aug 2026</time>
+              <span class="hm-post-body">
+                <span class="hm-post-title">Privacy without paralysis</span>
+                <span class="hm-post-note">Federated learning for UAV edge computing when DP noise meets non-IID data.</span>
+              </span>
+              <span class="hm-post-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-label"><b>03</b> Projects</p>
-            <h2 class="section-title">Built, broken, rebuilt.</h2>
-          </div>
-          <a class="section-link" href="projects.html">All projects <span class="arrow" aria-hidden="true">→</span></a>
+    <section class="hm-band hm-contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap hm-contact-grid">
+        <div>
+          <h2 class="hm-title" id="contact-title">Contact</h2>
+          <p class="hm-contact-copy">Open to collaboration on UAV networks, federated learning, and privacy-preserving systems — and to questions about either paper.</p>
         </div>
-
-        <div class="project-grid">
-          <article class="project-card" data-reveal>
-            <div class="project-top">
-              <span class="project-index">01</span>
-              <span>Research code</span>
-            </div>
-            <h3><a href="https://github.com/vectordai2000/MAPA-MARL">MAPA-MARL</a></h3>
-            <p>A compact PyTorch toolkit for constrained multi-agent RL with hybrid actions, built around a UAV-MEC simulator.</p>
-            <div class="project-meta">
-              <span class="lang" style="--lang-color:#3572A5;">Python</span>
-              <span>MIT</span>
-              <span>2026</span>
-              <span class="ext">GitHub <span aria-hidden="true">↗</span></span>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-top">
-              <span class="project-index">02</span>
-              <span>Research demo</span>
-            </div>
-            <h3><a href="https://github.com/vectordai2000/pq-frl-demo">PQ-FRL demo</a></h3>
-            <p>A reduced-scale, CPU-runnable demo of privacy-preserving, quality-aware federated RL. Not the paper's simulation code.</p>
-            <div class="project-meta">
-              <span class="lang" style="--lang-color:#3572A5;">Python</span>
-              <span>MIT</span>
-              <span>2026</span>
-              <span class="ext">GitHub <span aria-hidden="true">↗</span></span>
-            </div>
-          </article>
-        </div>
-
-        <div class="github-strip">
-          <div>
-            <span class="mono">GitHub</span>
-            <p>New work and notes live here. The old blog and earlier projects stay on @hkhldzf.</p>
-          </div>
-          <a href="https://github.com/vectordai2000">@vectordai2000 <span aria-hidden="true">↗</span></a>
+        <div class="hm-contact-actions">
+          <a class="btn btn--solid" href="contact.html">Send a message <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="https://github.com/vectordai2000">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -297,15 +252,6 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer-cta">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s talk about <em>systems that learn.</em></h2>
-          <p>If you work on UAV networks, federated learning, or privacy-preserving systems — or just want to compare notes — send a message or find me on GitHub.</p>
-        </div>
-        <a class="btn btn--solid" href="contact.html">Leave a message <span class="arrow" aria-hidden="true">↗</span></a>
-      </div>
-
       <div class="footer-main">
         <div class="footer-brand">
           <a class="brand" href="index.html" aria-label="Zifeng Dai — home">
@@ -345,6 +291,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261018"></script>
+  <script src="assets/js/main.js?v=20261020"></script>
 </body>
 </html>
