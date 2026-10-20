@@ -75,7 +75,7 @@
         <p class="eyebrow">About · The short version</p>
         <h1>The person behind <em>the networks.</em></h1>
         <p class="page-lede">
-          I’m Zifeng — a graduate student working on UAV networks, federated learning, and the systems that connect them. I like work that has to survive outside the lab, and notes that survive the next deadline.
+          I’m Zifeng — a graduate student at Beijing Institute of Technology. I study how UAV-assisted edge systems coordinate, learn, and protect the data they depend on; I build the simulator and the learning algorithm, then write down what breaks.
         </p>
         <div class="about-keywords">
           <span class="tag">UAV networks</span>
@@ -90,19 +90,19 @@
     <section class="about-grid wrap">
       <div class="about-copy">
         <p>
-          I study networked systems and security at Beijing Institute of Technology, in the School of Cyberspace Science and Technology. My work asks how UAV-assisted edge systems <em>coordinate</em>, <em>learn</em>, and protect the data they depend on.
+          I work at the intersection of networked systems and machine learning.
         </p>
         <p>
-          I started graduate school in 2023. Like a lot of first-year students, I began with Andrew Ng’s machine learning course and a notebook full of definitions. That notebook became <a href="https://hkhldzf.github.io/">VectorBlog</a>, a place to record what I was learning about regression, clustering, and the privacy properties of blockchains. This site is the next version of that habit: slower, cleaner, and a little more honest about what I do and don’t know.
+          I design UAV-assisted edge environments and the multi-agent algorithms that operate in them, with a focus on the assumptions that make clean benchmarks fail: hybrid action spaces, long-term fairness, non-stationary peers, heterogeneous clients, and privacy noise.
         </p>
         <p>
-          The name <strong>Vector</strong> comes from that first blog. I still like it. A vector has direction and magnitude; a good research question should have both.
+          Two questions organize most of what I do. First, how does a swarm coordinate when every agent is learning and the action space mixes continuous flight with discrete offloading? Second, how can clients learn together when their data is Non-IID and cannot leave the device? <a href="research.html#mapa-marl">MAPA-MARL</a> and <a href="research.html#pq-frl">PQ-FRL</a> are my current answers; both are first-author papers, and both come with public code.
         </p>
         <p>
-          These days I work on two questions: how to coordinate a swarm when every agent is learning and the action space is hybrid; and how to learn across heterogeneous clients without exposing their data.
+          I came to research through writing. In 2023 I started graduate school and a notebook that became <a href="https://hkhldzf.github.io/">VectorBlog</a>, where I worked through regression, clustering, and the privacy properties of blockchains. That habit stayed: I write to find the edges of what I understand. This site is the continuation — fewer announcements, more working notes.
         </p>
         <p>
-          This site is where I keep the working notes — the failed experiments, the diagrams that finally made sense, and the papers I wish someone had explained to me earlier.
+          I care about the parts that are easy to skip: a simulator that matches its stated assumptions, a baseline that is actually competitive, a failure case that is reported instead of averaged away. The notes here are where I keep those details, including the ones that did not fit in a paper.
         </p>
         <div class="about-actions">
           <a class="btn btn--solid" href="contact.html">Say hello <span class="arrow" aria-hidden="true">↗</span></a>
@@ -195,18 +195,18 @@
         <div class="now-grid">
           <div class="now-card">
             <span class="mono">Research</span>
-            <h3>UAV networks, in the loop</h3>
-            <p>Multi-agent coordination and privacy-preserving federated learning for UAV-assisted edge computing.</p>
+            <h3>Constrained MARL for UAV networks</h3>
+            <p>Hybrid actions, fairness constraints, non-stationarity, and privacy-preserving federated learning.</p>
           </div>
           <div class="now-card">
             <span class="mono">Writing</span>
-            <h3>Notes, not announcements</h3>
-            <p>Two paper notes on MAPA-MARL and PQ-FRL — with the caveats left in.</p>
+            <h3>Notes with the caveats left in</h3>
+            <p>Two paper notes on MAPA-MARL and PQ-FRL, plus the working notes that did not fit in a paper.</p>
           </div>
           <div class="now-card">
             <span class="mono">Building</span>
-            <h3>This site</h3>
-            <p>A static site with no framework and no tracking — a small counterweight to the rest of the web.</p>
+            <h3>Open code</h3>
+            <p>MAPA-MARL and a reduced-scale PQ-FRL demo, both public on GitHub.</p>
           </div>
         </div>
       </div>
@@ -220,11 +220,11 @@
       <div class="timeline">
         <div class="timeline-item">
           <time datetime="2026">2026</time>
-          <p><strong>Two first-author papers:</strong> MAPA-MARL in <em>IEEE Transactions on Vehicular Technology</em> and PQ-FRL in <em>IEEE Internet of Things Journal</em>.</p>
+          <p><strong>Two first-author papers:</strong> MAPA-MARL in <em>IEEE Transactions on Vehicular Technology</em> and PQ-FRL in <em>IEEE Internet of Things Journal</em>. Released the MAPA-MARL code and a reduced-scale PQ-FRL demo.</p>
         </div>
         <div class="timeline-item">
           <time datetime="2025">2025</time>
-          <p>Started working on multi-agent learning for UAV-assisted edge computing, and began keeping research notes in public.</p>
+          <p>Started building the UAV-MEC simulator and multi-agent training stack behind MAPA-MARL; began keeping research notes in public.</p>
         </div>
         <div class="timeline-item">
           <time datetime="2024">2024</time>
